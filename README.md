@@ -43,7 +43,3 @@ Assurez-vous de connecter correctement tous les périphériques et capteurs avan
 
 ## Licence
 Ce logiciel est sous licence selon les termes que vous pouvez trouver dans le fichier LICENSE situé à la racine de ce projet. Si aucun fichier LICENSE n'est fourni, le logiciel est fourni TEL QUEL.
-
----
-
-Assurez-vous d'adapter les liens des dépendances aux ressources spécifiques que vous utilisez et de fournir plus de détails sur les configurations matérielles spécifiques et les procédures d'installation si nécessaire. Ce README devrait permettre à tout nouvel utilisateur de comprendre rapidement comment installer, configurer et utiliser votre projet sur un microcontrôleur STM32.
