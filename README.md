@@ -1,7 +1,3 @@
-Voici un exemple de fichier README pour votre projet basé sur le code que vous avez fourni :
-
----
-
 # Projet STM32 avec Capteurs et Affichage LED
 
 ## Description
