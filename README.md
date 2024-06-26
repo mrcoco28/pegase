@@ -1,104 +1,53 @@
-# pegase
-# README
+Voici un exemple de fichier README pour votre projet basé sur le code que vous avez fourni :
+
+---
+
+# Projet STM32 avec Capteurs et Affichage LED
 
 ## Description
+Ce projet utilise un microcontrôleur STM32 pour interagir avec des capteurs d'environnement et un affichage LED à travers des manipulations de GPIO et des communications SPI.
 
-This project is a firmware application for an embedded system using an STM32 microcontroller. It integrates various peripherals including GPIO, UART, SPI, and TIM to control LEDs, read environmental sensors, and display data on a MAX7219 LED matrix. The code also includes basic serial communication for debugging purposes.
+## Table des matières
+- [Description](#description)
+- [Dépendances](#dépendances)
+- [Installation](#installation)
+- [Utilisation](#utilisation)
+- [Licence](#licence)
 
-## Features
+## Dépendances
+Ce projet nécessite les bibliothèques suivantes :
+- [STM32Cube HAL](https://www.st.com/en/embedded-software/stm32cube-mcu-packages.html) : Bibliothèque de support pour les microcontrôleurs STM32.
+- [MAX7219 Library](https://github.com/username/max7219_lib) : Bibliothèque pour contrôler les matrices de LED MAX7219.
+- [IKS01A3 Motion Sensors Library](https://www.st.com/en/ecosystems/iks01a3.html) : Bibliothèque pour les capteurs de mouvement IKS01A3.
+- [IKS01A3 Environmental Sensors Library](https://www.st.com/en/ecosystems/iks01a3.html) : Bibliothèque pour les capteurs d'environnement IKS01A3.
 
-- LED control and animations
-- Environmental sensor readings (humidity and temperature)
-- Real-time clock (RTC) management
-- UART communication for debugging
-- SPI communication with the MAX7219 LED matrix driver
-- Timer-based chronometer
+## Installation
+1. **Clonage du Dépôt :**
+   ```bash
+   git clone https://github.com/votre/répertoire.git
+   ```
+2. **Configuration du Projet :**
+   - Ouvrez le projet dans STM32CubeIDE.
+   - Configurez et générez le projet pour votre microcontrôleur STM32 spécifique.
 
-## Hardware Requirements
+## Utilisation
+Assurez-vous de connecter correctement tous les périphériques et capteurs avant d'exécuter le programme sur votre matériel cible.
 
-- STM32 microcontroller (exact model unspecified)
-- MAX7219 LED matrix display
-- IKS01A3 environmental sensors (humidity and temperature)
-- LEDs connected to GPIO pins
-- Push buttons for user input
-- RTC module
+1. **Compilation et Flash :**
+   - Compilez le projet dans STM32CubeIDE.
+   - Flasher le binaire généré sur le microcontrôleur.
 
-## Software Requirements
+2. **Exécution du Programme :**
+   - Alimentez le microcontrôleur et observez la console série pour les messages de débogage.
+   - Utilisez les boutons BTN1 et BTN2 pour interagir avec les fonctionnalités spécifiques du programme.
 
-- STM32CubeMX
-- STM32 HAL Library
-- C standard library
-- A serial terminal for UART communication (e.g., PuTTY, Tera Term)
+3. **Affichage sur les LED MAX7219 :**
+   - Lorsque le programme est en cours d'exécution, les capteurs d'environnement détectent la température et l'humidité.
+   - Ces valeurs sont affichées sur les matrices de LED MAX7219 connectées.
 
-## Setup and Configuration
+## Licence
+Ce logiciel est sous licence selon les termes que vous pouvez trouver dans le fichier LICENSE situé à la racine de ce projet. Si aucun fichier LICENSE n'est fourni, le logiciel est fourni TEL QUEL.
 
-### Clock Configuration
+---
 
-The system clock is configured with an HSI oscillator and LSE for the RTC. The PLL is used to achieve the desired system clock frequency. 
-
-### Peripherals Initialization
-
-1. **GPIO**: Configured for LED outputs and button inputs.
-2. **UART**: Configured for serial communication at 115200 baud rate.
-3. **SPI**: Configured to interface with the MAX7219 display driver.
-4. **TIM6**: Configured for base timer with interrupt.
-5. **RTC**: Configured for real-time clock functionalities.
-
-### Pin Assignments
-
-- LEDs are connected to GPIOB pins (L0 to L7).
-- Buttons are connected to various GPIO ports (BTN1, BTN2, BTN3, BTN4).
-- SPI_CS pin for MAX7219 is configured.
-
-## Code Structure
-
-### Main Function
-
-The main function initializes all configured peripherals and enters an infinite loop to handle:
-
-- LED control using buttons
-- Display updates for environmental sensor data
-- Serial communication for debugging
-
-### Key Functions
-
-- `switchLed`: Toggle a specific LED.
-- `switchLedAll`: Toggle all LEDs.
-- `K2000`: Execute a Knight Rider-style LED animation.
-- `Chrono`: Update and display the chronometer value.
-
-### Sensor Initialization
-
-The environmental sensors (humidity and temperature) are initialized, and their values are read periodically to update the display and log data via UART.
-
-## Usage
-
-1. **Compile and flash the firmware**: Use STM32CubeIDE or a similar tool to compile and flash the firmware onto the STM32 microcontroller.
-2. **Connect the hardware**: Ensure all sensors, LEDs, and buttons are connected as per the pin configuration.
-3. **Open a serial terminal**: Connect to the microcontroller's UART port at 115200 baud rate to view debug messages.
-4. **Interact with the system**: Use the buttons to control the LEDs and view the sensor data on the MAX7219 display.
-
-### Button Functions
-
-- **BTN1**: Initiate the K2000 LED animation.
-- **BTN2**: Print "Hello World" message to the UART terminal.
-- **BTN3**: [Reserved for additional functionality]
-- **BTN4**: [Reserved for additional functionality]
-
-## Debugging
-
-The UART is used for debugging purposes. Messages related to sensor initialization, data readings, and chronometer values are printed to the terminal.
-
-## Error Handling
-
-An `Error_Handler` function is implemented to handle system errors. It disables interrupts and enters an infinite loop. Custom error messages can be added for more detailed debugging.
-
-## Additional Notes
-
-- Ensure that the LICENSE file is included in the root directory of the project.
-- Modify the pin configurations and peripheral settings according to your specific hardware setup.
-- The environmental sensor readings are displayed alternately for humidity and temperature based on the `switch_HT` flag.
-
-## Contact
-
-For further assistance, please refer to the official STM32 documentation or contact the project maintainer.
+Assurez-vous d'adapter les liens des dépendances aux ressources spécifiques que vous utilisez et de fournir plus de détails sur les configurations matérielles spécifiques et les procédures d'installation si nécessaire. Ce README devrait permettre à tout nouvel utilisateur de comprendre rapidement comment installer, configurer et utiliser votre projet sur un microcontrôleur STM32.
